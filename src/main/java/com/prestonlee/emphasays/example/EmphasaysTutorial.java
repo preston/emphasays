@@ -1,14 +1,18 @@
 package com.prestonlee.emphasays.example;
 
+import java.util.AbstractMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-import org.apache.lucene.search.spell.StringDistance;
-
+import com.prestonlee.emphasays.calculator.ICalculator;
 import com.prestonlee.emphasays.calculator.WeightedCalculator;
 import com.prestonlee.emphasays.calculator.distance.DamerauLevenshteinDistanceCalculator;
 import com.prestonlee.emphasays.calculator.distance.IDistanceCalculator;
 import com.prestonlee.emphasays.calculator.distance.LengthDifferenceCalculator;
 import com.prestonlee.emphasays.calculator.distance.LevenshteinDistanceCalculator;
+import com.prestonlee.emphasays.calculator.distance.MaxLengthCalculator;
+import com.prestonlee.emphasays.calculator.distance.MinLengthCalculator;
 import com.prestonlee.emphasays.calculator.similarity.ISimilarityCalculator;
 import com.prestonlee.emphasays.calculator.similarity.JaroWinklerSimilarityCalculator;
 import com.prestonlee.emphasays.calculator.similarity.LevenshteinSimilarityCalculator;
@@ -20,7 +24,16 @@ import com.prestonlee.emphasays.calculator.similarity.NGramSimilarityCalculator;
  * @author Preston Lee <preston@asu.edu>
  * 
  */
-public class EmphasaysTutorial extends EmphasaysExample {
+public class EmphasaysTutorial {
+
+	public final static String S1_SOURCE = "emphasays";
+	public final static String S1_TARGET = "emphases";
+	public final static String S2_SOURCE = "olanzapine";
+	public final static String S2_TARGET = "ollanzapeen";
+	public final static String S3_SOURCE = "trazodone";
+	public final static String S3_TARGET = "trasehdon";
+	public final static String S4_SOURCE = "haha";
+	public final static String S4_TARGET = "ahahaha!";
 
 	public static void main(final String[] args) {
 
@@ -28,6 +41,8 @@ public class EmphasaysTutorial extends EmphasaysExample {
 		final IDistanceCalculator length = new LengthDifferenceCalculator();
 		final IDistanceCalculator levenshtein = new LevenshteinDistanceCalculator();
 		final IDistanceCalculator damerauLevenshtein = new DamerauLevenshteinDistanceCalculator();
+		final IDistanceCalculator min = new MinLengthCalculator();
+		final IDistanceCalculator max = new MaxLengthCalculator();
 
 		// A small sample data set is baked in for convenience, so we'll run our
 		// functions against the sample data:
@@ -37,6 +52,8 @@ public class EmphasaysTutorial extends EmphasaysExample {
 			showCalculation(length, e.getKey(), e.getValue());
 			showCalculation(levenshtein, e.getKey(), e.getValue());
 			showCalculation(damerauLevenshtein, e.getKey(), e.getValue());
+			showCalculation(min, e.getKey(), e.getValue());
+			showCalculation(max, e.getKey(), e.getValue());
 		}
 
 		// If we want to get clever, we can use multiple algorithms together,
@@ -81,5 +98,19 @@ public class EmphasaysTutorial extends EmphasaysExample {
 		}
 
 		System.out.println("\n======== Done! ========");
+	}
+
+	public static Set<Map.Entry<String, String>> exampleData() {
+		Set<Map.Entry<String, String>> data = new HashSet<Map.Entry<String, String>>();
+		data.add(new AbstractMap.SimpleEntry<String, String>(S1_SOURCE, S1_TARGET));
+		data.add(new AbstractMap.SimpleEntry<String, String>(S2_SOURCE, S2_TARGET));
+		data.add(new AbstractMap.SimpleEntry<String, String>(S3_SOURCE, S3_TARGET));
+		data.add(new AbstractMap.SimpleEntry<String, String>(S4_SOURCE, S4_TARGET));
+		return data;
+	}
+
+	public static void showCalculation(final ICalculator pCalculator, final String pSource, final String pTarget) {
+		float result = pCalculator.calculate(pSource, pTarget);
+		System.out.println("\t" + pCalculator.getClass().getSimpleName() + ":\t" + result);
 	}
 }

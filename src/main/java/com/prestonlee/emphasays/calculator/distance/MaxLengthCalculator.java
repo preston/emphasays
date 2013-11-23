@@ -2,6 +2,9 @@ package com.prestonlee.emphasays.calculator.distance;
 
 import com.prestonlee.emphasays.calculator.AbstractCalculator;
 
+/**
+ * @author Preston Lee <preston@asu.edu>
+ */
 public class MaxLengthCalculator extends AbstractCalculator implements IDistanceCalculator {
 
 	public float calculate(final String pSource, final String pTarget) {
