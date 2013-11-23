@@ -3,10 +3,10 @@ emphasays
 
 An Open Source Java library of string distance calculators, phoneme reducers, and tools for combining said algorithms into weighted metrics for tailored name-entity recognition.
 
-Emphasays provides a number of "ICalculator" class divided into two primary categories:
+Emphasays provides a number of "ICalculator" classes divided into two primary categories:
 
-- **distance** calculators generally measure the number of changes to go from String A to String B. 
-- **similarity** calculators are a normalized 0.0-1.0 metric of how alike String A is to String B, inclusive.
+- **IDistanceCalculator** calculators generally measure the number of changes to go from String A to String B. 
+- **ISimilarityCalculator** calculators are a normalized 0.0-1.0 metric of how alike String A is to String B, inclusive.
 
 A number of algorithms are either directly included or referrenced by the POM, including Levenshtein, DamerauLevenshtein, JaroWinkler, NGram, and others. Perhaps more importantly, however, and several special ICalculators that allow you to optimize your use of all the others:
 
