@@ -8,7 +8,7 @@ Emphasays provides a number of "ICalculator" classes divided into two primary ca
 - **IDistanceCalculator** calculators generally measure the number of changes to go from String A to String B. 
 - **ISimilarityCalculator** calculators are a normalized 0.0-1.0 metric of how alike String A is to String B, inclusive.
 
-A number of algorithms are either directly included or referrenced by the POM, including Levenshtein, DamerauLevenshtein, JaroWinkler, NGram, and others. Perhaps more importantly, however, and several special ICalculators that allow you to optimize your use of all the others:
+A number of algorithms are either directly included or referrenced by the POM, including Levenshtein, DamerauLevenshtein, JaroWinkler, NGram, and others, which fall in one or both of the above categories. Perhaps more importantly, however, and several special ICalculators that allow you to optimize your use of all the others:
 
 - **WeightedCalculator** combines any number of other calculators into a weighted result. 
 - **PiecewiseCalculator** creates a piecewise function of any number of calculators, the selection of which is based upon an additional "selector" calculator and given min and max selection values.
