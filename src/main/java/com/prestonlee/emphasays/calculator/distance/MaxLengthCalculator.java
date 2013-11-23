@@ -9,7 +9,6 @@ public class MaxLengthCalculator extends AbstractCalculator implements IDistance
 			throw new IllegalArgumentException();
 		}
 		int max = Math.max(pSource.length(), pTarget.length());
-		// TODO Auto-generated method stub
 		return max;
 	}
 
