@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import com.prestonlee.emphasays.calculator.ICalculator;
+import com.prestonlee.emphasays.calculator.PiecewiseCalculator;
 import com.prestonlee.emphasays.calculator.WeightedCalculator;
 import com.prestonlee.emphasays.calculator.distance.DamerauLevenshteinDistanceCalculator;
 import com.prestonlee.emphasays.calculator.distance.IDistanceCalculator;
@@ -36,8 +37,8 @@ public class EmphasaysTutorial {
 	public final static String S2_TARGET = "ollanzapeen";
 	public final static String S3_SOURCE = "trazodone";
 	public final static String S3_TARGET = "trasehdon";
-	public final static String S4_SOURCE = "haha";
-	public final static String S4_TARGET = "ahahaha!";
+	public final static String S4_SOURCE = "hah";
+	public final static String S4_TARGET = "ahaha!";
 
 	public static void main(final String[] args) {
 		if (args.length == 1) {
@@ -108,12 +109,22 @@ public class EmphasaysTutorial {
 				showCalculation(weightedSimilarity, e.getKey(), e.getValue());
 			}
 
-			// To make things even more interesting, we'll only using only
-			// weighted calculator for words greater than 3 characters. For
+			// To make things even more interesting, we'll only use our
+			// weighted calculator when one of the strings is less than
+			// 3 characters in length. For other cases we'll use a
 			// small words we'll use a raw calculator. This is simply to
 			// demonstrate the flexibility of combinations; for real-world use
 			// you'll want to experiment with your domain-specific data,
 			// generate some fancy-pants statistics, and optimize from there.
+			final PiecewiseCalculator piecewise = new PiecewiseCalculator();
+			piecewise.addFunction(min, 0f, 4f, weightedSimilarity);
+			// FIXME Max distance
+			piecewise.addFunction(min, 4, 1000, levenshteinSimilarity);
+			System.out.println("\n======== PIECEWISE CALCULATION ========");
+			for (Map.Entry<String, String> e : exampleData()) {
+				System.out.println("Similarity: " + e.getKey() + " -> " + e.getValue());
+				showCalculation(piecewise, e.getKey(), e.getValue());
+			}
 
 			// Let's recognize some words!
 			System.out.println("\n======== DICTIONARY RECOGNIZER WITH WEIGHTED SCORING ========");
