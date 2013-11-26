@@ -15,6 +15,10 @@ A number of algorithms are either directly included or referrenced by the POM, i
 
 Both weighted and piecewise calculators may also be combined arbitrarily to create complex results tailor to your specific needs. All these are more and demonstrated in the tutorial code at https://github.com/preston/emphasays/blob/master/src/main/java/com/prestonlee/emphasays/example/EmphasaysTutorial.java
 
+TODO
+========
+- Implement dictionary-backed calculators.
+- Add complex piecewise + sub-weighting example to tutorial class.
 
 Attribution
 ========
