@@ -1,9 +1,6 @@
-package com.prestonlee.emphasays.calculator.distance;
+package com.prestonlee.emphasays.calculator;
 
 import org.apache.commons.codec.language.DoubleMetaphone;
-
-import com.prestonlee.emphasays.calculator.AbstractCalculator;
-import com.prestonlee.emphasays.calculator.ICalculator;
 
 /**
  * Reduces arguments to their phonetic representation using the
