@@ -29,7 +29,7 @@ An **IRecognizer** (such as FileLoadedInMemoryRecognizer) uses an internal dicti
 - Determine the most common misspellings of a set of words by filtering out exact matches and sorting by recognizer scores.
 - Find a known list of known names in a large block of text.
 - Combine Jaro-Winkler (better for short strings) with Damerau-Levenshtein distance calculators in a piecewise function discriminated by mininum string length to build your own more accurate distance algorithm.
-- 
+
 
 Installation
 --------
