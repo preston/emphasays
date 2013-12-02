@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.prestonlee</groupId>
@@ -35,7 +36,7 @@
 	<description>An Open Source Java library of string distance calculators, phoneme reducers, and tools for combining said algorithms into weighted metrics for tailored name-entity recognition.</description>
 
 	<organization>
-		<name>Preston Lee</name>
+		<name>Preston Lee Ventures, LLC</name>
 		<url>http://prestonlee.com</url>
 	</organization>
 
@@ -49,7 +50,7 @@
 	<distributionManagement>
 		<repository>
 			<id>bintray</id>
-			<url>https://api.bintray.com/maven/preston/emphasays/package</url>
+			<url>https://api.bintray.com/maven/preston/emphasays/jar</url>
 		</repository>
 	</distributionManagement>
 
