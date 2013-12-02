@@ -118,7 +118,7 @@ public class EmphasaysTutorial {
 			// generate some fancy-pants statistics, and optimize from there.
 			final PiecewiseCalculator piecewise = new PiecewiseCalculator();
 			piecewise.addFunction(min, 0f, 4f, weightedSimilarity);
-			// FIXME Max distance
+			// FIXME Max distance shouldn't be arbitrary.
 			piecewise.addFunction(min, 4, 1000, levenshteinSimilarity);
 			System.out.println("\n======== PIECEWISE CALCULATION ========");
 			for (Map.Entry<String, String> e : exampleData()) {

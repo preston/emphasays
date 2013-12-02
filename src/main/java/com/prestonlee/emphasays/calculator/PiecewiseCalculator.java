@@ -70,6 +70,7 @@ public class PiecewiseCalculator implements ICalculator {
 		for (PiecewiseEntry p : mPieces) {
 			filterValue = p.getSelector().calculate(pSource, pTarget);
 			if (filterValue >= p.getSelectorMin() && filterValue < (p.getSelectorMin() + p.getSelectorWindowSize())) {
+//				System.out.println("\tUsing " + p.getFunction().getClass().getSimpleName());
 				result = p.getFunction().calculate(pSource, pTarget);
 				break;
 			}
