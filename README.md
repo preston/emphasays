@@ -9,7 +9,6 @@ Calculators
 Emphasays provides a number of "ICalculator" classes divided into two primary categories:
 
 - **IDistanceCalculator** calculators generally measure the number of changes to go from String A to String B. Distance is implied to be measured in some form of unit, such as "the distance from Phoenix to Chicago in miles". It must be a positive real number greater than or equal to zero, but does not necessarily have an upper bound.
-- 
 - **ISimilarityCalculator** calculators are a normalized 0.0-1.0 metric of how alike String A is to String B, inclusive. Similarity should generally be considered unit-less, such as "I am very similar to my best friend", and has hard lower and upper bounds at 0.0 and 1.0, respectively. 
 
 Both interfaces are "markers" only and share a common **ICalculator** parent, though you should excercise caution when mixing them due to the subtle but important different in semantics.
