@@ -43,7 +43,7 @@ public class FileLoadedInMemoryRecognizer implements IRecognizer {
 			String cur;
 			while (scanner.hasNext()) {
 				cur = scanner.next();
-				System.out.println(cur);
+//				System.out.println(cur);
 				getDictionary().add(cur);
 			}
 			scanner.close();
@@ -68,7 +68,7 @@ public class FileLoadedInMemoryRecognizer implements IRecognizer {
 			float sScore;
 			for (String s : mDictionary) {
 				sScore = pCalculator.calculate(pUnknown, s);
-				if (sScore > bestScore) {
+				if (sScore >= bestScore) {
 					bestWord = s;
 					bestScore = sScore;
 				}

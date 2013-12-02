@@ -3,6 +3,8 @@ package com.prestonlee.emphasays.calculator.distance;
 import com.prestonlee.emphasays.calculator.AbstractCalculator;
 
 /**
+ * Returns the length of the shortest given {@link String}.
+ * 
  * @author Preston Lee <preston@asu.edu>
  */
 public class MinLengthCalculator extends AbstractCalculator implements IDistanceCalculator {

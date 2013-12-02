@@ -8,7 +8,7 @@ import com.prestonlee.emphasays.calculator.AbstractCalculator;
  * Adapted from C# code on the Wikipedia page on the algorithm by Preston Lee.
  * {@link https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
  * 
- * @author Preston Lee preston@asu.edu
+ * @author Preston Lee <preston@asu.edu>
  */
 public class DamerauLevenshteinDistanceCalculator extends AbstractCalculator implements IDistanceCalculator {
 

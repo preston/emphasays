@@ -48,8 +48,8 @@ public class PiecewiseCalculator implements ICalculator {
 	 * wins!
 	 * 
 	 * @param pSelector
-	 *            An {@link ICalculator} that determines when the function
-	 *            applies.
+	 *            An {@link ICalculator} that determines when the other given
+	 *            {@link ICalculator} applies. This is effectively a closure.
 	 * @param pSelectorMin
 	 *            The minimum filter value that causes the selector to match,
 	 *            inclusive.
@@ -70,7 +70,8 @@ public class PiecewiseCalculator implements ICalculator {
 		for (PiecewiseEntry p : mPieces) {
 			filterValue = p.getSelector().calculate(pSource, pTarget);
 			if (filterValue >= p.getSelectorMin() && filterValue < (p.getSelectorMin() + p.getSelectorWindowSize())) {
-//				System.out.println("\tUsing " + p.getFunction().getClass().getSimpleName());
+				// System.out.println("\tUsing " +
+				// p.getFunction().getClass().getSimpleName());
 				result = p.getFunction().calculate(pSource, pTarget);
 				break;
 			}

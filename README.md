@@ -5,8 +5,8 @@ An Open Source Java library of string distance calculators, phoneme reducers, an
 
 Emphasays provides a number of "ICalculator" classes divided into two primary categories:
 
-- **IDistanceCalculator** calculators generally measure the number of changes to go from String A to String B. 
-- **ISimilarityCalculator** calculators are a normalized 0.0-1.0 metric of how alike String A is to String B, inclusive.
+- **IDistanceCalculator** calculators generally measure the number of changes to go from String A to String B. Distance is implied to be measured in some form of unit, such as "the distance from Phoenix to Chicago in miles". It must be a positive real number greater than or equal to zero, but does not necessarily have an upper bound.
+- **ISimilarityCalculator** calculators are a normalized 0.0-1.0 metric of how alike String A is to String B, inclusive. Similarity should generally be considered unit-less, such as "I am very similar to my best friend", and has hard lower and upper bounds at 0.0 and 1.0, respectively. 
 
 A number of algorithms are either directly included or referrenced by the POM, including Levenshtein, DamerauLevenshtein, JaroWinkler, NGram, and others, which fall in one or both of the above categories. Perhaps more importantly, however, are several special ICalculators that allow you to optimize your use of all others:
 

@@ -30,6 +30,11 @@
 			<artifactId>lucene-suggest</artifactId>
 			<version>4.5.1</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>2.3</version>
+		</dependency>
 	</dependencies>
 
 	<description>An Open Source Java library of string distance calculators, phoneme reducers, and tools for combining said algorithms into weighted metrics for tailored name-entity recognition.</description>
