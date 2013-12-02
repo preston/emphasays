@@ -15,8 +15,7 @@ public class TestLevenshtheinCalculator {
 		int diff = (int)calc.calculate(EmphasaysTutorial.S1_SOURCE, EmphasaysTutorial.S1_TARGET);
 		assertSame(2, diff);
 		diff = (int)calc.calculate(EmphasaysTutorial.S2_SOURCE, EmphasaysTutorial.S2_TARGET);
-		assertSame(4, diff);
-		
+		assertSame(4, diff);		
 	}
 
 }
