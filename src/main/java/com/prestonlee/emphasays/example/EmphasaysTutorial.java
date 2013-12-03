@@ -53,8 +53,7 @@ public class EmphasaysTutorial {
 			final IDistanceCalculator max = new MaxLengthCalculator();
 
 			// A small sample data set is baked in for convenience, so we'll run
-			// our
-			// functions against the sample data:
+			// our functions against the sample data:
 			System.out.println("\n======== DISTANCE CALCULATIONS ========");
 			for (Map.Entry<String, String> e : exampleData()) {
 				System.out.println(e.getKey() + " -> " + e.getValue());
@@ -66,11 +65,9 @@ public class EmphasaysTutorial {
 			}
 
 			// If we want to get clever, we can use multiple algorithms
-			// together,
-			// and balance their contribution weighted manner. Notice that the
-			// total
-			// weight add up to more than 1.0, but that's ok as weights are
-			// normalized automatically.
+			// together, and balance their contribution weighted manner. Notice
+			// that the total weight add up to more than 1.0, but that's ok as
+			// weights are normalized automatically.
 			final WeightedCalculator<IDistanceCalculator> weightedDistance = new WeightedCalculator<IDistanceCalculator>();
 			weightedDistance.addCalculator(length, .2f);
 			weightedDistance.addCalculator(levenshtein, .3f);
@@ -82,8 +79,7 @@ public class EmphasaysTutorial {
 			}
 
 			// Now let's change gears and compute some *similarity* values,
-			// which
-			// are normalized into 0.0-1.0 scale, inclusive.
+			// which are normalized into 0.0-1.0 scale, inclusive.
 			final ISimilarityCalculator jaroWinkler = new JaroWinklerSimilarityCalculator();
 			final ISimilarityCalculator levenshteinSimilarity = new LevenshteinSimilarityCalculator();
 			final ISimilarityCalculator luceneLevenshteinSimilarity = new LuceneLevenshteinSimilarityCalculator();
