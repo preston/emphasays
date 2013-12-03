@@ -72,6 +72,15 @@ If you're using Maven, try jamming this into your ~/.m2/settings.xml
 See the example referenced above for sample code.
 
 
+Extending Emphasays
+========
+
+With the Inversion of Control design used in cases such as **IRecognizer** and delegating **ICalculator**s, you may mix and match your own algorithms alongside those provided. Several abstract parent classes are also provided for your convenience.
+
+Class Diagram
+--------
+![Emphasays class diagram](https://raw.github.com/preston/emphasays/master/Emphasays%20Class%20Diagram.png)
+
 Attribution
 ========
 
