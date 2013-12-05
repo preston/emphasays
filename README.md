@@ -1,7 +1,7 @@
 emphasays
 =========
 
-An Open Source Java library of string distance calculators, similarity algorithms, phoneme reducers, dictionary-backed recognition tools, and other classes for combining said components into weighted metrics for tailored name-entity recognition.
+An Open Source Java library of string distance calculators, similarity algorithms, phoneme reducers, dictionary-backed recognition tools, and other classes for combining said components into weighted metrics for tailored named-entity recognition.
 
 Calculators
 --------

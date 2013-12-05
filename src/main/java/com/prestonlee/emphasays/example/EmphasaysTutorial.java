@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.prestonlee.emphasays.calculator.DoubleMetaphoneDelegatingCalculator;
 import com.prestonlee.emphasays.calculator.ICalculator;
 import com.prestonlee.emphasays.calculator.PiecewiseCalculator;
 import com.prestonlee.emphasays.calculator.WeightedCalculator;
@@ -94,10 +95,13 @@ public class EmphasaysTutorial {
 			}
 
 			// We can reuse the same weighting mechanism for similarity scores!
+			// To make things more interesting, we'll convert input tokens to
+			// phonetic representations before delegating to an underlying
+			// comparison metric.
 			final WeightedCalculator<ISimilarityCalculator> weightedSimilarity = new WeightedCalculator<ISimilarityCalculator>();
 			weightedSimilarity.addCalculator(jaroWinkler, .6f);
 			weightedSimilarity.addCalculator(levenshteinSimilarity, .4f);
-			weightedSimilarity.addCalculator(luceneLevenshteinSimilarity, .2f);
+			weightedSimilarity.addCalculator(new DoubleMetaphoneDelegatingCalculator(luceneLevenshteinSimilarity), .2f);
 			weightedSimilarity.addCalculator(nGram, .0f);
 			System.out.println("\n======== WEIGHTED SIMILARITIES ========");
 			for (Map.Entry<String, String> e : exampleData()) {

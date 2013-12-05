@@ -2,6 +2,9 @@ package com.prestonlee.emphasays.calculator;
 
 import org.apache.commons.codec.language.Metaphone;
 
+import com.prestonlee.emphasays.calculator.distance.IDistanceCalculator;
+import com.prestonlee.emphasays.calculator.similarity.ISimilarityCalculator;
+
 /**
  * Reduces arguments to their phonetic representation using the
  * {@link Metaphone} algorithm before delegating to the provided
@@ -9,7 +12,7 @@ import org.apache.commons.codec.language.Metaphone;
  * 
  * @author Preston Lee <preston@asu.edu>
  */
-public class MetaphoneDelegatingCalculator extends AbstractCalculator implements ICalculator {
+public class MetaphoneDelegatingCalculator extends AbstractCalculator implements IDistanceCalculator, ISimilarityCalculator {
 
 	protected final static Metaphone mMetaphone = new Metaphone();
 
